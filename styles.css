@@ -1,83 +1,27 @@
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Georgia', serif;
-  background: url('images/fondo.jpg') no-repeat center center fixed;
-  background-size: cover;
-  overflow: hidden;
-  height: 100vh;
-  width: 100vw;
+    margin: 0;
+    background-color: #fef9f4;
+    font-family: 'Georgia', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
-
-.container {
-  text-align: center;
-  position: relative;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.gallery {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
 }
-
-.sobre img {
-  width: 350px;
-  max-width: 90vw;
-  cursor: pointer;
-  transition: transform 1s ease;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+.gallery img {
+    width: 250px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
-
-.sobre.cerrado img {
-  transform: rotateX(90deg);
-}
-
-.contenido {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-  height: 100vh;
-  width: 100vw;
-}
-
-.galeria {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.galeria-img {
-  width: auto;
-  height: 300px;
-  border-radius: 10px;
-  cursor: pointer;
-  object-fit: contain;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
-}
-
-.zoomed {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(255, 255, 255, 0.95);
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
-  cursor: zoom-out;
-}
-
-.zoomed img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+.gallery img:hover {
+    transform: scale(1.05);
 }

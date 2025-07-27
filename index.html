@@ -1,55 +1,25 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Juli & Juani</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <title>Juli y Juani</title>
+    <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <div class="sobre" id="sobre">
-      <img src="images/sobre.png" alt="Sobre cerrado" />
+    <div class="gallery">
+        <a href="img1.jpg" data-lightbox="wedding-set" data-title="Mapa Iglesia y Salón">
+            <img src="img1.jpg" alt="Mapa Iglesia y Salón">
+        </a>
+        <a href="img2.jpg" data-lightbox="wedding-set" data-title="Invitación Principal">
+            <img src="img2.jpg" alt="Invitación Principal">
+        </a>
+        <a href="img3.jpg" data-lightbox="wedding-set" data-title="Datos para Regalo">
+            <img src="img3.jpg" alt="Datos para Regalo">
+        </a>
     </div>
 
-    <div class="contenido" id="contenido">
-      <div class="galeria">
-        <img src="images/mapa.png" alt="Mapa" class="galeria-img zoomable"/>
-        <img src="images/principal.png" alt="Invitación principal" class="galeria-img zoomable"/>
-        <img src="images/regalo.png" alt="Regalo" class="galeria-img zoomable"/>
-      </div>
-    </div>
-  </div>
-
-  <div id="zoom-container" class="zoomed" onclick="closeZoom()">
-    <img id="zoomed-img" src="" alt="Zoomed" />
-  </div>
-
-  <script>
-    const sobre = document.getElementById('sobre');
-    const contenido = document.getElementById('contenido');
-    const zoomables = document.querySelectorAll('.zoomable');
-
-    sobre.addEventListener('click', () => {
-      sobre.classList.add('cerrado');
-      setTimeout(() => {
-        sobre.style.display = 'none';
-        contenido.style.display = 'flex';
-      }, 1000);
-    });
-
-    zoomables.forEach(img => {
-      img.addEventListener('click', () => {
-        const zoomContainer = document.getElementById('zoom-container');
-        const zoomedImg = document.getElementById('zoomed-img');
-        zoomedImg.src = img.src;
-        zoomContainer.style.display = 'flex';
-      });
-    });
-
-    function closeZoom() {
-      document.getElementById('zoom-container').style.display = 'none';
-    }
-  </script>
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
 </body>
 </html>
