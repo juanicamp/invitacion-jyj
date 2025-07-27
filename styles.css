@@ -12,25 +12,22 @@ body {
   min-height: 100vh;
 }
 
-/* Contenedor general */
+/* Contenedor principal */
 .gallery {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
   max-width: 1200px;
   width: 100%;
 }
 
-/* Tarjetas */
+/* Tarjetas base */
 .card {
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 16px;
   padding: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  flex: 1;
-  max-width: 33%;
 }
 
 .card img {
@@ -46,16 +43,29 @@ body {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
-/* Oculta el contador "Image X of Y" del Lightbox */
+/* Fila inferior para PC */
+.bottom-row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+.mapa,
+.regalo {
+  width: 33%;
+}
+
+/* Ocultar contador Lightbox */
 .lb-data .lb-number {
   display: none !important;
 }
 
-/* Responsive para celulares */
+/* Estilos responsive para celulares */
 @media (max-width: 768px) {
   body {
-    background-size: contain; /* para no recortar */
-    background-position: top center; /* enfocar parte superior */
+    background-size: contain;
+    background-position: top center;
     padding: 10px;
     flex-direction: column;
     align-items: center;
@@ -68,20 +78,26 @@ body {
   }
 
   .principal {
-    max-width: 100%;
+    order: 1;
     width: 100%;
+  }
+
+  .bottom-row {
+    order: 2;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
   }
 
   .mapa,
   .regalo {
-    display: inline-block;
     width: 48%;
-    max-width: 48%;
   }
 
   .mapa img,
   .regalo img {
-    height: auto;
     width: 100%;
+    height: auto;
   }
 }
