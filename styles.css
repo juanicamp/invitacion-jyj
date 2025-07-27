@@ -1,1 +1,72 @@
-/* CSS content here */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+  background: url('images/fondo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  text-align: center;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sobre img {
+  width: 350px;
+  max-width: 90vw;
+  cursor: pointer;
+  transition: transform 1s ease;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.sobre.cerrado img {
+  transform: rotateX(90deg);
+}
+
+.contenido {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  height: 100vh;
+  width: 100vw;
+}
+
+.galeria {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.galeria-img {
+  max-height: 60vh;
+  border-radius: 10px;
+  object-fit: contain;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+.left {
+  width: 20vw;
+  align-self: flex-start;
+}
+.center {
+  width: 35vw;
+}
+.right {
+  width: 15vw;
+  align-self: flex-end;
+}
