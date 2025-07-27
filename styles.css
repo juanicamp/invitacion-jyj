@@ -1,53 +1,52 @@
-
+/* Fondo general del sitio */
 body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: url('images/fondo.jpg') no-repeat center center fixed;
-  background-size: cover;
+    background-image: url('images/fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  flex-direction: column;
+/* Galería de tarjetas */
+.gallery {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
-.sobre img {
-  width: 200px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+/* Estilo de cada tarjeta */
+.card {
+    background-color: rgba(255, 255, 255, 0.85); /* Fondo blanco suave */
+    border-radius: 16px;
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.sobre.cerrado img {
-  transform: scale(0);
+/* Imágenes */
+.gallery img {
+    border-radius: 12px;
+    height: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: block;
 }
 
-.contenido {
-  display: none;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
+/* Hover */
+.gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
-.galeria-img {
-  cursor: pointer;
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.left {
-  width: 25%;
-}
-
-.center {
-  width: 40%;
-}
-
-.right {
-  width: 30%;
+/* Oculta el contador "Image X of Y" del Lightbox */
+.lb-data .lb-number {
+    display: none !important;
 }

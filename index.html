@@ -1,55 +1,36 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Juli & Juani</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="lightbox2/css/lightbox.min.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitación Juli y Juani</title>
+
+    <!-- Lightbox CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container">
-    <div class="sobre" id="sobre">
-      <img src="images/sobre.png" alt="Sobre cerrado" />
+    <div class="gallery">
+        <div class="card">
+            <a href="images/mapa.png" data-lightbox="invitacion">
+                <img src="images/mapa.png" alt="Mapa Iglesia y Salón" />
+            </a>
+        </div>
+        <div class="card">
+            <a href="images/principal.png" data-lightbox="invitacion">
+                <img src="images/principal.png" alt="Invitación Principal" />
+            </a>
+        </div>
+        <div class="card">
+            <a href="images/regalo.png" data-lightbox="invitacion">
+                <img src="images/regalo.png" alt="Datos para Regalo" />
+            </a>
+        </div>
     </div>
 
-    <div class="contenido" id="contenido">
-      <div class="galeria">
-        <a href="images/mapa.png" data-lightbox="invitacion" data-title="">
-          <img src="images/mapa.png" alt="Mapa" class="galeria-img left"/>
-        </a>
-        <a href="images/principal.png" data-lightbox="invitacion" data-title="">
-          <img src="images/principal.png" alt="Invitación principal" class="galeria-img center"/>
-        </a>
-        <a href="images/regalo.png" data-lightbox="invitacion" data-title="">
-          <img src="images/regalo.png" alt="Regalo" class="galeria-img right"/>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <script src="lightbox2/js/lightbox-plus-jquery.min.js"></script>
-  <script>
-    const sobre = document.getElementById('sobre');
-    const contenido = document.getElementById('contenido');
-
-    sobre.addEventListener('click', () => {
-      sobre.classList.add('cerrado');
-      setTimeout(() => {
-        sobre.style.display = 'none';
-        contenido.style.display = 'flex';
-      }, 1000);
-    });
-
-    lightbox.option({
-      'albumLabel': "",
-      'fadeDuration': 300,
-      'resizeDuration': 300,
-      'wrapAround': true,
-      'disableScrolling': true,
-      'positionFromTop': 50
-    });
-  </script>
+    <!-- Lightbox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js"></script>
 </body>
 </html>
