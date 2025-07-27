@@ -1,65 +1,77 @@
-body, html {
+html, body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  overflow: hidden;      /* ✨ Evita el scroll */
-  height: 100vh;         /* ✨ Asegura que el contenido no supere la altura visible */
-  background-image: url('fondo.png');
+  overflow: hidden;
+  height: 100vh;
+  font-family: 'Georgia', serif;
+  background-image: url('images/fondo.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  font-family: 'Georgia', serif;
 }
 
-/* Contenedor principal */
-.container {
+/* Contenedor general */
+.gallery {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   height: 100vh;
-  gap: 20px;
-  padding: 20px;
+  gap: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Imagen grande principal */
+/* Imagen principal (ocupa mitad de pantalla) */
 .principal {
-  height: 90%;
-  max-height: 90vh;
-  object-fit: contain;
+  flex: 0 0 50%;
+  width: 100%;
+  padding: 0;
 }
 
-/* Imágenes secundarias */
-.secundaria {
-  height: 45%;
-  max-height: 45vh;
+.principal img {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  display: block;
+  border-radius: 0;
 }
 
-/* Estilos para móvil */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
+/* Fila inferior (dos imágenes lado a lado) */
+.bottom-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0;
+  width: 100%;
+  flex: 0 0 50%;
+}
 
-  .principal {
-    width: 90vw;
-    height: auto;
-  }
+/* Cada tarjeta secundaria ocupa 50% del alto disponible abajo */
+.card.mapa,
+.card.regalo {
+  flex: 1;
+  height: 100%;
+  padding: 0;
+}
 
-  .fila-secundarias {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-  }
+.card.mapa img,
+.card.regalo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 0;
+}
 
-  .secundaria {
-    width: 45vw;
-    height: auto;
-  }
+/* Elimina fondo blanco, bordes, sombras */
+.card {
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* Oculta el contador del lightbox */
+.lb-data .lb-number {
+  display: none !important;
 }
