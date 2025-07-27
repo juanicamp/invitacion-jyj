@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,12 +10,10 @@
 </head>
 <body>
   <div class="container">
-    <!-- SOBRE INICIAL -->
     <div class="sobre" id="sobre">
       <img src="images/sobre.png" alt="Sobre cerrado" />
     </div>
 
-    <!-- MENÚ PRINCIPAL CON TRES IMÁGENES -->
     <div class="contenido" id="contenido">
       <div class="galeria">
         <a href="images/mapa.png" data-lightbox="invitacion" data-title="">
@@ -30,13 +29,11 @@
     </div>
   </div>
 
-  <!-- SCRIPTS -->
   <script src="lightbox2/js/lightbox-plus-jquery.min.js"></script>
   <script>
     const sobre = document.getElementById('sobre');
     const contenido = document.getElementById('contenido');
 
-    // Al hacer clic en el sobre, lo oculta y muestra el menú principal
     sobre.addEventListener('click', () => {
       sobre.classList.add('cerrado');
       setTimeout(() => {
@@ -45,7 +42,6 @@
       }, 1000);
     });
 
-    // Configuración de Lightbox
     lightbox.option({
       'albumLabel': "",
       'fadeDuration': 300,
