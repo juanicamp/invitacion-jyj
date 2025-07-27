@@ -1,72 +1,105 @@
-
+/* General */
 body {
   margin: 0;
   padding: 0;
+  background-color: #fdfaf6;
   font-family: 'Georgia', serif;
-  background: url('images/fondo.jpg') no-repeat center center fixed;
-  background-size: cover;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-  width: 100vw;
 }
 
 .container {
-  text-align: center;
   position: relative;
+  width: 100%;
   height: 100%;
+}
+
+/* SOBRE */
+.sobre {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fdfaf6;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 10;
+  transition: opacity 1s ease-out;
 }
 
 .sobre img {
-  width: 350px;
-  max-width: 90vw;
+  width: 250px;
   cursor: pointer;
-  transition: transform 1s ease;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease-in-out;
 }
 
-.sobre.cerrado img {
-  transform: rotateX(90deg);
+.sobre img:hover {
+  transform: scale(1.05);
 }
 
+.sobre.cerrado {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* CONTENIDO (Menú Principal con las 3 imágenes) */
 .contenido {
   display: none;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 20px;
-  padding: 20px;
-  height: 100vh;
-  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .galeria {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  gap: 20px;
+  align-items: center;
+  position: relative;
 }
 
+/* Imágenes */
 .galeria-img {
-  max-height: 60vh;
-  border-radius: 10px;
-  object-fit: contain;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  border-radius: 12px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
 }
 
-.left {
-  width: 20vw;
-  align-self: flex-start;
+.galeria-img:hover {
+  transform: scale(1.05);
 }
-.center {
-  width: 35vw;
+
+/* Ubicaciones específicas */
+.galeria-img.left {
+  width: 180px;
+  position: absolute;
+  top: -60px;
+  left: -200px;
 }
-.right {
-  width: 15vw;
-  align-self: flex-end;
+
+.galeria-img.center {
+  width: 300px;
+  z-index: 2;
+}
+
+.galeria-img.right {
+  width: 180px;
+  position: absolute;
+  bottom: -40px;
+  right: -200px;
+}
+
+/* Lightbox2 override: eliminar el texto abajo */
+.lb-data .lb-caption,
+.lb-data .lb-number {
+  display: none !important;
 }
