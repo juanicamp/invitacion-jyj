@@ -2,40 +2,41 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden;      /* ✨ Elimina scroll */
-  height: 100vh;         /* ✨ Se ajusta al alto de la pantalla */
+  height: 100vh;
   font-family: 'Georgia', serif;
   background-image: url('images/fondo.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 /* Contenedor principal */
 .gallery {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 100vh;
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
+  gap: 10px;
 }
 
 /* Tarjeta general */
 .card {
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 16px;
-  padding: 10px;
+  padding: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
 }
 
 /* Imagen principal */
 .principal {
+  height: 50%;
   width: 100%;
-  flex: 1 1 50%;
 }
 
 .principal img {
@@ -49,14 +50,15 @@ html, body {
 .bottom-row {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  flex: 1 1 45%;
   gap: 10px;
+  height: 45%;
+  width: 100%;
 }
 
 /* Tarjetas secundarias */
 .mapa, .regalo {
-  width: 49%;
+  width: 50%;
+  height: 100%;
 }
 
 .mapa img, .regalo img {
@@ -71,10 +73,25 @@ html, body {
   display: none !important;
 }
 
-/* Estilos específicos para móvil si querés ajustar más */
+/* Estilos para dispositivos móviles */
 @media (max-width: 768px) {
   .gallery {
-    padding: 10px;
-    gap: 10px;
+    flex-direction: column;
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .principal {
+    height: 48%;
+  }
+
+  .bottom-row {
+    flex-direction: row;
+    height: 48%;
+  }
+
+  .mapa, .regalo {
+    width: 50%;
+    height: 100%;
   }
 }
