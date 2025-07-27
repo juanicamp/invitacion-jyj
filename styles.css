@@ -1,27 +1,30 @@
 
 body {
-    margin: 0;
-    background-color: #fef9f4;
+    background-color: #f8f2ec;
     font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
 }
+
 .gallery {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 20px;
+    align-items: center;
 }
+
 .gallery img {
-    width: 250px;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    height: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
+
 .gallery img:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
