@@ -13,15 +13,24 @@
     </div>
 
     <div class="contenido" id="contenido">
-      <img src="images/principal.png" alt="Invitación principal" class="fade zoomable"/>
-      <img src="images/mapa.png" alt="Mapa" class="fade zoomable"/>
-      <img src="images/regalo.png" alt="Regalo" class="fade zoomable"/>
+      <div class="galeria">
+        <img src="images/mapa.png" alt="Mapa" class="galeria-img left zoomable"/>
+        <img src="images/principal.png" alt="Invitación principal" class="galeria-img center zoomable"/>
+        <img src="images/regalo.png" alt="Regalo" class="galeria-img right zoomable"/>
+      </div>
+      <div class="nav-buttons">
+        <button onclick="navigate(-1)">⟵</button>
+        <button onclick="navigate(1)">⟶</button>
+      </div>
     </div>
   </div>
 
   <script>
     const sobre = document.getElementById('sobre');
     const contenido = document.getElementById('contenido');
+    const zoomables = document.querySelectorAll('.zoomable');
+    const galeriaImgs = document.querySelectorAll('.galeria-img');
+    let currentIndex = 1;
 
     sobre.addEventListener('click', () => {
       sobre.classList.add('cerrado');
@@ -31,11 +40,19 @@
       }, 1000);
     });
 
-    document.querySelectorAll('.zoomable').forEach(img => {
+    zoomables.forEach(img => {
       img.addEventListener('click', () => {
-        img.classList.toggle('zoomed');
+        zoomables.forEach(i => i.classList.remove('zoomed'));
+        img.classList.add('zoomed');
       });
     });
+
+    function navigate(direction) {
+      const total = galeriaImgs.length;
+      currentIndex = (currentIndex + direction + total) % total;
+      zoomables.forEach(i => i.classList.remove('zoomed'));
+      galeriaImgs[currentIndex].classList.add('zoomed');
+    }
   </script>
 </body>
 </html>
