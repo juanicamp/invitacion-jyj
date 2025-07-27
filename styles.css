@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+  background: url('images/fondo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  text-align: center;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sobre img {
+  width: 350px;
+  max-width: 90vw;
+  cursor: pointer;
+  transition: transform 1s ease;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.sobre.cerrado img {
+  transform: rotateX(90deg);
+}
+
+.contenido {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+  animation: fadeIn 1s ease-in;
+}
+
+.fade {
+  max-width: 100vw;
+  max-height: 100vh;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  cursor: zoom-in;
+  object-fit: contain;
+}
+
+.zoomed {
+  transform: scale(1.2);
+  cursor: zoom-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

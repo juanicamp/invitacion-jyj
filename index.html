@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Juli & Juani</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="sobre" id="sobre">
+      <img src="images/sobre.png" alt="Sobre cerrado" />
+    </div>
+
+    <div class="contenido" id="contenido">
+      <img src="images/principal.png" alt="Invitación principal" class="fade zoomable"/>
+      <img src="images/mapa.png" alt="Mapa" class="fade zoomable"/>
+      <img src="images/regalo.png" alt="Regalo" class="fade zoomable"/>
+    </div>
+  </div>
+
+  <script>
+    const sobre = document.getElementById('sobre');
+    const contenido = document.getElementById('contenido');
+
+    sobre.addEventListener('click', () => {
+      sobre.classList.add('cerrado');
+      setTimeout(() => {
+        sobre.style.display = 'none';
+        contenido.style.display = 'flex';
+      }, 1000);
+    });
+
+    document.querySelectorAll('.zoomable').forEach(img => {
+      img.addEventListener('click', () => {
+        img.classList.toggle('zoomed');
+      });
+    });
+  </script>
+</body>
+</html>
