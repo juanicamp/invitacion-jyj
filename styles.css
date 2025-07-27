@@ -1,7 +1,9 @@
+
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #f8f8f8;
+  background: url('images/fondo.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
 
 .container {
@@ -9,6 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  flex-direction: column;
 }
 
 .sobre img {
