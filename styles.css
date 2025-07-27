@@ -19,8 +19,8 @@ html, body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding: 10px;
-  gap: 10px;
+  padding: 20px 10px 30px 10px; /* aire arriba y más aire abajo */
+  gap: 12px;
   box-sizing: border-box;
 }
 
@@ -45,7 +45,7 @@ html, body {
 
 /* Imagen principal */
 .principal img {
-  max-height: 50vh;
+  max-height: 46vh; /* más aire visual arriba y abajo */
   height: auto;
   width: auto;
   max-width: 100%;
@@ -80,8 +80,8 @@ html, body {
 /* Móvil */
 @media (max-width: 768px) {
   .gallery {
-    padding: 6px;
-    gap: 6px;
+    padding: 16px 6px 24px 6px;
+    gap: 8px;
   }
 
   .bottom-row {
