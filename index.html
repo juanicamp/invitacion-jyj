@@ -14,23 +14,21 @@
 
     <div class="contenido" id="contenido">
       <div class="galeria">
-        <img src="images/mapa.png" alt="Mapa" class="galeria-img left zoomable"/>
-        <img src="images/principal.png" alt="Invitación principal" class="galeria-img center zoomable"/>
-        <img src="images/regalo.png" alt="Regalo" class="galeria-img right zoomable"/>
-      </div>
-      <div class="nav-buttons">
-        <button onclick="navigate(-1)">⟵</button>
-        <button onclick="navigate(1)">⟶</button>
+        <img src="images/mapa.png" alt="Mapa" class="galeria-img zoomable"/>
+        <img src="images/principal.png" alt="Invitación principal" class="galeria-img zoomable"/>
+        <img src="images/regalo.png" alt="Regalo" class="galeria-img zoomable"/>
       </div>
     </div>
+  </div>
+
+  <div id="zoom-container" class="zoomed" onclick="closeZoom()">
+    <img id="zoomed-img" src="" alt="Zoomed" />
   </div>
 
   <script>
     const sobre = document.getElementById('sobre');
     const contenido = document.getElementById('contenido');
     const zoomables = document.querySelectorAll('.zoomable');
-    const galeriaImgs = document.querySelectorAll('.galeria-img');
-    let currentIndex = 1;
 
     sobre.addEventListener('click', () => {
       sobre.classList.add('cerrado');
@@ -42,16 +40,15 @@
 
     zoomables.forEach(img => {
       img.addEventListener('click', () => {
-        zoomables.forEach(i => i.classList.remove('zoomed'));
-        img.classList.add('zoomed');
+        const zoomContainer = document.getElementById('zoom-container');
+        const zoomedImg = document.getElementById('zoomed-img');
+        zoomedImg.src = img.src;
+        zoomContainer.style.display = 'flex';
       });
     });
 
-    function navigate(direction) {
-      const total = galeriaImgs.length;
-      currentIndex = (currentIndex + direction + total) % total;
-      zoomables.forEach(i => i.classList.remove('zoomed'));
-      galeriaImgs[currentIndex].classList.add('zoomed');
+    function closeZoom() {
+      document.getElementById('zoom-container').style.display = 'none';
     }
   </script>
 </body>
