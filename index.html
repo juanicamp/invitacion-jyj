@@ -2,24 +2,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Invitación Juli y Juani</title>
-    <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitación J&J</title>
+  <link href="lightbox2/css/lightbox.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="gallery">
-        <a href="mapa.png" data-lightbox="invitacion" data-title="Mapa Iglesia y Salón">
-            <img src="mapa.png" alt="Mapa Iglesia y Salón" />
-        </a>
-        <a href="principal.png" data-lightbox="invitacion" data-title="Invitación Principal">
-            <img src="principal.png" alt="Invitación Principal" />
-        </a>
-        <a href="regalo.png" data-lightbox="invitacion" data-title="Datos para Regalo">
-            <img src="regalo.png" alt="Datos para Regalo" />
-        </a>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
+  <div id="cover">
+    <img src="images/sobre.png" alt="Abrir invitación" id="openButton" />
+  </div>
+  <div id="gallery" class="hidden">
+    <a href="images/mapa.png" data-lightbox="invitacion"><img src="images/mapa.png" alt="Mapa" class="mapa" /></a>
+    <a href="images/principal.png" data-lightbox="invitacion"><img src="images/principal.png" alt="Principal" class="principal" /></a>
+    <a href="images/regalo.png" data-lightbox="invitacion"><img src="images/regalo.png" alt="Regalo" class="regalo" /></a>
+  </div>
+
+  <script src="lightbox2/js/lightbox-plus-jquery.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
